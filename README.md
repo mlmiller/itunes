@@ -5,7 +5,7 @@
 	
 You can play along at home with this example by performing the following steps:
 
-## Get a free CouchDB account.  
+## Get a free Cloudant account.  
 Head to [http://cloudant.com](http://cloudant.com) and sign up for an account on the Malort cluster (Rackspace-Chicago).
 
 ## Manage replications
@@ -30,7 +30,7 @@ After saving the document, the replication should start and finish in a matter o
 ## Validating the replication
 After the replication is complete, you should be able to perform the following check:
 
-	curl -u 'meadmike' 'https://meadmike.cloudant.com/itunes1'
+	curl -u 'username' 'https://username.cloudant.com/itunes1'
 
 and receive a response like:
 
@@ -250,3 +250,18 @@ and receive a response like:
 	  "bookmark": "g1AAAADaeJzLYWBgYM5gTmGQSUlKzi9KdUhJMtLLTU1M0UvOyS9NScwr0ctLLckBqmJKZEiy____fxaY4-YgwgAGSQwMbBuyiDMhjwWkowFIAc3ZDzPIAm4Qkx5JBh2AGAR3kQnCRQZZWQDl-jr5",
 	  "total_rows": 7
 	}
+	
+# Extras
+
+##  View Collation.  
+For the discussion on MapReduce, the CouchDB explanation of how keys are sorted is incredibly useful: [http://wiki.apache.org/couchdb/View_collation#Collation_Specification](http://wiki.apache.org/couchdb/View_collation#Collation_Specification)
+
+## Pushing new Indexing Code.  
+I use couchapp-python, a depricated but functional python library.
+
+	sudo pup install couchapp
+	cd ana1
+	couchapp push 'https://username:pwd@username.cloudant.com/itunes1'
+	
+
+

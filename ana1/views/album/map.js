@@ -4,3 +4,4 @@ function(doc)
 		emit( [doc.artist, doc.album], null);
 	}
 }
+a
