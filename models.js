@@ -159,12 +159,14 @@ fat_normalized = {
 
 /*
 	Example documents from itunes3 database.
-	Skinny documents linked by foreign keys.
+	Relational documents linked by foreign keys.
 */
 album = {
    "_id": "album:ExpressYourselfEP_Diplo",
    "_rev": "1-9c618e9360d8670f952335e68526e07b",
-   "type": "album"
+   "type": "album",
+   "album_artist": "Diplo",
+   "album": "Express Yourself - EP"
 }
 
 song = {
