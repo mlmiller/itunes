@@ -1,7 +1,7 @@
 # Data Modeling and Relational Analysis in a NoSQL World 
 
 	Mike Miller (Cloudant)
-	Last Modified: 4/8/2013
+	Last Modified: 10/14/2013
 	
 You can play along at home with this example by performing the following steps:
 
@@ -11,7 +11,7 @@ Head to [http://cloudant.com](http://cloudant.com) and sign up for an account on
 ## Manage replications
 Create a `_replicator` database to manage your replication between databases.  You can do this by navigating to [your user dashboard on cloudant.com](https://cloudant.com/dashboard/#!/dashboard) or performing the simple command below from a shell/terminal.
 	
-	curl -X PUT -u 'username' 'https://username.cloudant.com/_replicator'
+	curl -X PUT -u username 'https://username.cloudant.com/_replicator'
 	
 ## Replicate the demo data
 To trigger a replication we follow the instructions from the [CouchDB documentation](http://wiki.apache.org/couchdb/Replication#Replicator_database).  We encapsulate information about the source and target databases into a single document.  Then navigate to the cloudant.com dashboard and create a new document.  Choose "View Source" and past the following into the form:
@@ -30,7 +30,7 @@ After saving the document, the replication should start and finish in a matter o
 ## Validating the replication
 After the replication is complete, you should be able to perform the following check:
 
-	curl -u 'username' 'https://username.cloudant.com/itunes1'
+	curl -u username 'https://username.cloudant.com/itunes1'
 
 and receive a response like:
 
@@ -254,12 +254,12 @@ and receive a response like:
 # Extras
 
 ##  View Collation.  
-For the discussion on MapReduce, the CouchDB explanation of how keys are sorted is incredibly useful: [http://wiki.apache.org/couchdb/View_collation#Collation_Specification](http://wiki.apache.org/couchdb/View_collation#Collation_Specification)
+For the discussion on MapReduce, the  explanation of how keys are sorted is incredibly useful: [http://wiki.apache.org/couchdb/View_collation#Collation_Specification](http://wiki.apache.org/couchdb/View_collation#Collation_Specification)
 
 ## Pushing new Indexing Code.  
 I use couchapp-python, a depricated but functional python library.
 
-	sudo pup install couchapp
+	sudo pip install couchapp
 	cd ana1
 	couchapp push 'https://username:pwd@username.cloudant.com/itunes1'
 	
