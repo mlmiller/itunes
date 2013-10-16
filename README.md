@@ -16,12 +16,10 @@ Create a `_replicator` database to manage your replication between databases.  Y
 ## Replicate the demo data
 To trigger a replication we follow the instructions from the [CouchDB documentation](http://wiki.apache.org/couchdb/Replication#Replicator_database).  We encapsulate information about the source and target databases into a single document.  Then navigate to the cloudant.com dashboard and create a new document.  Choose "View Source" and past the following into the form:
 
+
 		{
 		    "source": "https://malortmike.cloudant.com/itunes1",
 		    "target": "https://username:pwd@username.cloudant.com/itunes1",
-			"worker_processes": 20,
-			"worker_batch_size": 500,
-			"http_connections": 500,
 			"create_target": true,
 			"connection_timeout": 60000
 		}
